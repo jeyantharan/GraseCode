@@ -1,26 +1,163 @@
-@import "tailwindcss";
-
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --gc-black: #050505;
+  --gc-dark: #121212;
+  --gc-white: #ffffff;
+  --gc-crystal: #3ddbe1;
+  --gc-crystal-dark: #2baab0;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--gc-black);
+  color: var(--gc-white);
+  font-family: var(--font-inter), sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom UI utilities to supplement Bootstrap */
+.bg-gc-dark { background-color: var(--gc-dark); }
+.bg-gc-black { background-color: var(--gc-black); }
+.text-crystal { color: var(--gc-crystal) !important; }
+.bg-crystal { background-color: var(--gc-crystal) !important; }
+
+/* Custom Buttons */
+.btn-crystal {
+  background-color: var(--gc-crystal);
+  color: var(--gc-black);
+  font-weight: 600;
+  border: none;
+  transition: all 0.3s ease;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+}
+.btn-crystal:hover {
+  background-color: var(--gc-white);
+  color: var(--gc-black);
+  box-shadow: 0 0 15px rgba(61, 219, 225, 0.6);
+  transform: translateY(-2px);
+}
+
+.btn-outline-crystal {
+  border: 2px solid var(--gc-crystal);
+  color: var(--gc-crystal);
+  font-weight: 600;
+  transition: all 0.3s ease;
+  padding: 0.65rem 1.5rem;
+  border-radius: 4px;
+  background: transparent;
+}
+.btn-outline-crystal:hover {
+  background-color: var(--gc-crystal);
+  color: var(--gc-black);
+  box-shadow: 0 0 15px rgba(61, 219, 225, 0.4);
+}
+
+/* Section spacing */
+.section-padding {
+  padding: 100px 0;
+}
+
+/* Navbar */
+.gc-navbar {
+  background-color: rgba(5, 5, 5, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+.gc-navbar .nav-link {
+  color: var(--gc-white) !important;
+  font-weight: 500;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+.gc-navbar .nav-link:hover {
+  color: var(--gc-crystal) !important;
+}
+
+/* Hero Section */
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(61,219,225,0.15) 0%, rgba(0,0,0,0) 70%);
+  z-index: -1;
+  border-radius: 50%;
+}
+
+/* Cards */
+.gc-card {
+  background-color: var(--gc-dark);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+.gc-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--gc-crystal);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(61, 219, 225, 0.2);
+}
+.gc-icon-wrapper {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  background: rgba(61, 219, 225, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: var(--gc-crystal);
+  margin-bottom: 20px;
+}
+
+/* Custom Forms */
+.gc-input {
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--gc-white);
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.gc-input:focus {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: var(--gc-crystal);
+  box-shadow: 0 0 0 0.25rem rgba(61, 219, 225, 0.25);
+  color: var(--gc-white);
+  outline: none;
+}
+
+.gc-input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.gc-form-label {
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+/* Logo Badge Design */
+.gc-logo-wrapper {
+  background-color: var(--gc-white);
+  padding: 6px 18px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+}
+
+.gc-logo-wrapper:hover {
+  box-shadow: 0 4px 25px rgba(61, 219, 225, 0.2);
+  transform: translateY(-2px);
 }
