@@ -17,7 +17,7 @@ const Footer = () => {
                   alt="GraseCode Logo"
                   width={160}
                   height={45}
-                  style={{ width: 'auto', height: '40px', objectFit: 'contain', transform: 'scale(3.0)' }}
+                  style={{ width: 'auto', height: '40px', objectFit: 'contain' }}
                 />
               </div>
               <div className="text-white fw-bold fs-3" style={{ letterSpacing: "-1px" }}>GraseCode</div>

@@ -28,7 +28,7 @@ const Navbar = () => {
                 alt="GraseCode Logo"
                 width={160}
                 height={45}
-                style={{ width: 'auto', height: '36px', objectFit: 'contain', transform: 'scale(3.0)' }}
+                style={{ width: 'auto', height: '36px', objectFit: 'contain' }}
                 priority
               />
             </div>
