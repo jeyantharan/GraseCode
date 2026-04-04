@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "bootstrap/dist/css/bootstrap.min.css"; // Bootstrap CSS
 import "bootstrap-icons/font/bootstrap-icons.css"; // Bootstrap Icons
 import "./globals.css";
+import LoadingScreen from "@/components/LoadingScreen";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -22,6 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en" style={{ backgroundColor: '#050505' }}>
       <body className={`${inter.variable} antialiased`}>
+        <LoadingScreen />
         {children}
       </body>
     </html>
