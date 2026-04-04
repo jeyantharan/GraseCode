@@ -18,6 +18,7 @@ const Footer = () => {
                   width={160}
                   height={45}
                   style={{ width: 'auto', height: '40px', objectFit: 'contain' }}
+                  unoptimized
                 />
               </div>
               <div className="text-white fw-bold fs-3" style={{ letterSpacing: "-1px" }}>GraseCode</div>

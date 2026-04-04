@@ -30,6 +30,7 @@ const Navbar = () => {
                 height={45}
                 style={{ width: 'auto', height: '36px', objectFit: 'contain' }}
                 priority
+                unoptimized
               />
             </div>
             <div className="text-white fw-bold fs-3" style={{ letterSpacing: "-1px" }}>GraseCode</div>
