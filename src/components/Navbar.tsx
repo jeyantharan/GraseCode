@@ -30,7 +30,7 @@ const Navbar = () => {
             <div
               className="gc-logo-wrapper me-3"
               style={{
-                backgroundColor: '#ffffff',
+                backgroundColor: '#3ddbe1',
                 padding: '6px 18px',
                 borderRadius: '12px',
                 display: 'inline-flex',

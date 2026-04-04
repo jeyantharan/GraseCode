@@ -47,33 +47,30 @@ const LoadingScreen = () => {
     <>
       <style>{`
         @keyframes gc-logo-pop {
-          0%   { transform: scale(0.4) rotate(-10deg); opacity: 0; }
-          60%  { transform: scale(1.08) rotate(2deg); opacity: 1; }
-          80%  { transform: scale(0.97) rotate(-1deg); }
-          100% { transform: scale(1) rotate(0deg); opacity: 1; }
+          0%   { transform: scale(0.5); opacity: 0; filter: blur(8px); }
+          60%  { transform: scale(1.06); opacity: 1; filter: blur(0px); }
+          80%  { transform: scale(0.97); }
+          100% { transform: scale(1); opacity: 1; filter: blur(0px); }
         }
-        @keyframes gc-slide-up {
-          0%   { transform: translateY(20px); opacity: 0; }
-          100% { transform: translateY(0); opacity: 1; }
+        @keyframes gc-logo-float {
+          0%, 100% { transform: translateY(0px); }
+          50%       { transform: translateY(-8px); }
         }
         @keyframes gc-glow-pulse {
-          0%, 100% { box-shadow: 0 0 30px rgba(61, 219, 225, 0.3), 0 0 60px rgba(61, 219, 225, 0.1); }
-          50%       { box-shadow: 0 0 50px rgba(61, 219, 225, 0.6), 0 0 100px rgba(61, 219, 225, 0.2); }
+          0%, 100% { filter: drop-shadow(0 0 16px rgba(61,219,225,0.4)); }
+          50%       { filter: drop-shadow(0 0 36px rgba(61,219,225,0.9)); }
         }
         @keyframes gc-orbit {
-          from { transform: rotate(0deg) translateX(70px) rotate(0deg); }
-          to   { transform: rotate(360deg) translateX(70px) rotate(-360deg); }
+          from { transform: rotate(0deg) translateX(120px) rotate(0deg); }
+          to   { transform: rotate(360deg) translateX(120px) rotate(-360deg); }
         }
         @keyframes gc-orbit-reverse {
-          from { transform: rotate(0deg) translateX(90px) rotate(0deg); }
-          to   { transform: rotate(-360deg) translateX(90px) rotate(360deg); }
+          from { transform: rotate(0deg) translateX(150px) rotate(0deg); }
+          to   { transform: rotate(-360deg) translateX(150px) rotate(360deg); }
         }
         @keyframes gc-dot-blink {
           0%, 100% { opacity: 0.2; transform: scale(0.8); }
           50%       { opacity: 1;   transform: scale(1.2); }
-        }
-        @keyframes gc-bar-fill {
-          from { width: 0%; }
         }
         @keyframes gc-tag-slide {
           0%   { letter-spacing: 8px; opacity: 0; }
@@ -141,49 +138,28 @@ const LoadingScreen = () => {
               height: "5px",
               borderRadius: "50%",
               backgroundColor: "#3ddbe1",
-              animation: "gc-orbit-reverse 4s linear infinite",
+              animation: "gc-orbit-reverse 4.5s linear infinite",
               opacity: 0.4,
             }}
           />
         </div>
 
-        {/* Logo icon */}
-        <div
+        {/* Logo — big, centred, no background box */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/grasecode-logo.svg"
+          alt="GraseCode Logo"
           style={{
-            width: "90px",
-            height: "90px",
-            borderRadius: "20px",
-            backgroundColor: "#ffffff",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            animation: "gc-logo-pop 0.7s cubic-bezier(0.34,1.56,0.64,1) forwards, gc-glow-pulse 2s ease-in-out 0.7s infinite",
-            marginBottom: "28px",
+            width: '200px',
+            height: 'auto',
+            objectFit: 'contain',
+            animation: 'gc-logo-pop 0.8s cubic-bezier(0.34,1.56,0.64,1) forwards, gc-logo-float 3s ease-in-out 0.8s infinite, gc-glow-pulse 2s ease-in-out 0.8s infinite',
+            marginBottom: '32px',
             flexShrink: 0,
           }}
-        >
-          <svg
-            width="56"
-            height="36"
-            viewBox="0 0 56 36"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <text
-              x="4"
-              y="26"
-              fontFamily="'Inter', 'Segoe UI', system-ui, sans-serif"
-              fontWeight="800"
-              fontSize="24"
-              fill="#050505"
-              letterSpacing="-1"
-            >
-              GR
-            </text>
-          </svg>
-        </div>
+        />
 
-        {/* Brand name */}
+        {/* Brand name — fully white */}
         <div
           style={{
             transition: "opacity 0.5s ease, transform 0.5s ease",
@@ -195,24 +171,13 @@ const LoadingScreen = () => {
           <span
             style={{
               color: "#ffffff",
-              fontSize: "2rem",
+              fontSize: "2.2rem",
               fontWeight: 700,
               fontFamily: "'Inter', 'Segoe UI', system-ui, sans-serif",
               letterSpacing: "-0.5px",
             }}
           >
-            Grase
-          </span>
-          <span
-            style={{
-              color: "#3ddbe1",
-              fontSize: "2rem",
-              fontWeight: 700,
-              fontFamily: "'Inter', 'Segoe UI', system-ui, sans-serif",
-              letterSpacing: "-0.5px",
-            }}
-          >
-            Code
+            GraseCode
           </span>
         </div>
 
