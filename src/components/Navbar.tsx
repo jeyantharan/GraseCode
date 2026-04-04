@@ -18,11 +18,26 @@ const Navbar = () => {
       expand="lg"
       fixed="top"
       className={`gc-navbar py-3 ${scrolled ? "shadow" : ""}`}
+      style={{
+        backgroundColor: 'rgba(5, 5, 5, 0.85)',
+        backdropFilter: 'blur(10px)',
+        borderBottom: '1px solid rgba(255, 255, 255, 0.05)',
+      }}
     >
       <Container>
         <BootstrapNavbar.Brand>
           <Link href="/" className="navbar-brand d-flex align-items-center">
-            <div className="gc-logo-wrapper me-3">
+            <div
+              className="gc-logo-wrapper me-3"
+              style={{
+                backgroundColor: '#ffffff',
+                padding: '6px 18px',
+                borderRadius: '12px',
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
               <Image
                 src="/grasecode-logo.svg"
                 alt="GraseCode Logo"
