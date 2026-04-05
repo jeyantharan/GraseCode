@@ -19,9 +19,9 @@ const servicesDetails = [
     icon: "bi-lightbulb",
   },
   {
-    title: "Cybersecurity",
-    description: "Robust security protocols and audits to protect your company's most sensitive data from emerging threats.",
-    icon: "bi-shield-check",
+    title: "Mobile App Development",
+    description: "Native and cross-platform mobile apps for iOS and Android—polished UX, solid performance, and maintainable code.",
+    icon: "bi-phone",
   },
   {
     title: "AI Integrations",

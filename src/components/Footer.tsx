@@ -40,6 +40,12 @@ const Footer = () => {
             <h5 className="text-white fw-bold mb-4">Contact Us</h5>
             <ul className="list-unstyled text-light" style={{ opacity: 0.7 }}>
               <li className="mb-3"><i className="bi bi-envelope me-3 text-crystal"></i> hello@grasecode.com</li>
+              <li className="mb-3">
+                <i className="bi bi-telephone me-3 text-crystal"></i>
+                <a href="tel:+94767080299" className="text-light text-decoration-none">
+                  +94 76 708 0299
+                </a>
+              </li>
               <li className="mb-3"><i className="bi bi-geo-alt me-3 text-crystal"></i> Colombo, Sri Lanka</li>
             </ul>
           </Col>

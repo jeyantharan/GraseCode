@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css"; // Bootstrap CSS
 import "bootstrap-icons/font/bootstrap-icons.css"; // Bootstrap Icons
 import "./globals.css";
 import LoadingScreen from "@/components/LoadingScreen";
+import WhatsAppFloat from "@/components/WhatsAppFloat";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -25,6 +26,7 @@ export default function RootLayout({
       <body className={`${inter.variable} antialiased`}>
         <LoadingScreen />
         {children}
+        <WhatsAppFloat />
       </body>
     </html>
   );

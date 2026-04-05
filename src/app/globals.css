@@ -161,3 +161,106 @@ body {
   box-shadow: 0 4px 25px rgba(61, 219, 225, 0.5);
   transform: translateY(-2px);
 }
+
+/* Floating WhatsApp (opens wa.me chat) */
+@keyframes gc-whatsapp-glow {
+  0%,
+  100% {
+    box-shadow:
+      0 4px 16px rgba(0, 0, 0, 0.35),
+      0 0 0 0 rgba(37, 211, 102, 0.45),
+      0 0 0 1px rgba(255, 255, 255, 0.08);
+  }
+  50% {
+    box-shadow:
+      0 6px 22px rgba(37, 211, 102, 0.35),
+      0 0 0 10px rgba(37, 211, 102, 0),
+      0 0 0 1px rgba(255, 255, 255, 0.1);
+  }
+}
+
+@keyframes gc-whatsapp-ring {
+  0% {
+    transform: scale(1);
+    opacity: 0.65;
+  }
+  70%,
+  100% {
+    transform: scale(1.55);
+    opacity: 0;
+  }
+}
+
+@keyframes gc-whatsapp-bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.gc-whatsapp-float {
+  position: fixed;
+  /* Inset from bottom (higher on screen) and from right edge (sits further right) */
+  bottom: max(3.5rem, calc(env(safe-area-inset-bottom, 0px) + 1.25rem));
+  right: max(3.5rem, calc(env(safe-area-inset-right, 0px) + 0.25rem));
+  z-index: 1080;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #25d366;
+  color: #fff !important;
+  font-size: 1.75rem;
+  line-height: 1;
+  overflow: visible;
+  box-shadow:
+    0 4px 16px rgba(0, 0, 0, 0.35),
+    0 0 0 1px rgba(255, 255, 255, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-decoration: none;
+  animation: gc-whatsapp-glow 2.4s ease-in-out infinite,
+    gc-whatsapp-bob 2.4s ease-in-out infinite;
+}
+
+.gc-whatsapp-float::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  pointer-events: none;
+  animation: gc-whatsapp-ring 2.4s ease-out infinite;
+}
+
+.gc-whatsapp-float:hover {
+  color: #fff !important;
+  animation: none;
+  transform: scale(1.08);
+  box-shadow: 0 8px 28px rgba(37, 211, 102, 0.55);
+}
+
+.gc-whatsapp-float:hover::after {
+  animation: none;
+  opacity: 0;
+}
+
+.gc-whatsapp-float:focus-visible {
+  outline: 2px solid var(--gc-crystal);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gc-whatsapp-float,
+  .gc-whatsapp-float::after {
+    animation: none;
+  }
+  .gc-whatsapp-float:hover {
+    transform: none;
+    box-shadow: 0 6px 22px rgba(37, 211, 102, 0.45);
+  }
+}
