@@ -16,11 +16,6 @@ const Reviews = dynamic(() => import("@/components/Reviews"), {
   loading: () => <div className="text-center py-5"><span className="spinner-border text-dark" role="status"></span></div>
 });
 
-const BlogSection = dynamic(() => import("@/components/BlogSection"), {
-  ssr: true,
-  loading: () => <div className="text-center py-5"><span className="spinner-border text-dark" role="status"></span></div>
-});
-
 export default function Home() {
   return (
     <>
@@ -59,7 +54,6 @@ export default function Home() {
           </div>
         </section>
         <Reviews />
-        <BlogSection />
       </main>
       <Footer />
     </>
