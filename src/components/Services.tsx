@@ -37,21 +37,24 @@ const servicesDetails = [
 
 const Services = () => {
   return (
-    <section id="services" className="section-padding bg-gc-black position-relative" style={{ borderTop: "1px solid rgba(255,255,255,0.05)" }}>
+    <section id="services" className="section-padding bg-gc-bg-alt position-relative" style={{ borderTop: "1px solid var(--gc-border)" }}>
       <Container>
         <div className="text-center mb-5 pb-3">
-          <h6 className="text-crystal text-uppercase fw-bold mb-2" style={{ letterSpacing: "2px" }}>What We Do</h6>
-          <h2 className="display-5 fw-bold text-white mb-4">Our Expertise</h2>
+          <h6 className="text-muted-custom text-uppercase fw-bold mb-2" style={{ letterSpacing: "2px" }}>What We Do</h6>
+          <h2 className="display-4 fw-bold text-dark mb-4">Our Expertise</h2>
         </div>
         <Row className="g-4">
           {servicesDetails.map((service, index) => (
             <Col md={6} lg={4} key={index}>
               <div className="gc-card h-100 p-4 p-lg-5">
-                <div className="gc-icon-wrapper">
-                  <i className={`bi ${service.icon}`}></i>
+                <div className="d-flex justify-content-between align-items-start">
+                  <div className="gc-icon-wrapper">
+                    <i className={`bi ${service.icon}`}></i>
+                  </div>
+                  <div className="gc-index-num">{String(index + 1).padStart(2, '0')}</div>
                 </div>
-                <h4 className="text-white mb-3 fw-bold">{service.title}</h4>
-                <p className="text-light m-0 lh-lg" style={{ opacity: 0.7 }}>
+                <h4 className="text-dark mb-3 fw-bold">{service.title}</h4>
+                <p className="text-muted-custom m-0 lh-lg" style={{ fontSize: "0.95rem" }}>
                   {service.description}
                 </p>
               </div>

@@ -16,7 +16,6 @@ const LoadingScreen = () => {
           clearInterval(progressTimer);
           return 100;
         }
-        // Ease-in-out: fast start, slows in middle, fast at end
         const increment = prev < 30 ? 4 : prev < 70 ? 2 : 3;
         return Math.min(prev + increment, 100);
       });
@@ -35,11 +34,11 @@ const LoadingScreen = () => {
     return () => {
       clearInterval(progressTimer);
       clearTimeout(textTimer);
-      clearTimeout(taglineTimer);
+      clearTimeout(taglineVisible ? undefined : taglineTimer);
       clearTimeout(fadeTimer);
       clearTimeout(removeTimer);
     };
-  }, []);
+  }, [taglineVisible]);
 
   if (!visible) return null;
 
@@ -57,8 +56,8 @@ const LoadingScreen = () => {
           50%       { transform: translateY(-8px); }
         }
         @keyframes gc-glow-pulse {
-          0%, 100% { filter: drop-shadow(0 0 16px rgba(61,219,225,0.4)); }
-          50%       { filter: drop-shadow(0 0 36px rgba(61,219,225,0.9)); }
+          0%, 100% { filter: drop-shadow(0 0 12px rgba(0,0,0,0.06)); }
+          50%       { filter: drop-shadow(0 0 24px rgba(0,0,0,0.15)); }
         }
         @keyframes gc-orbit {
           from { transform: rotate(0deg) translateX(120px) rotate(0deg); }
@@ -83,7 +82,7 @@ const LoadingScreen = () => {
           position: "fixed",
           inset: 0,
           zIndex: 9999,
-          backgroundColor: "#050505",
+          backgroundColor: "#ffffff",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
@@ -104,7 +103,7 @@ const LoadingScreen = () => {
             width: "600px",
             height: "600px",
             background:
-              "radial-gradient(circle, rgba(61,219,225,0.08) 0%, transparent 70%)",
+              "radial-gradient(circle, rgba(0, 0, 0, 0.02) 0%, transparent 70%)",
             borderRadius: "50%",
             pointerEvents: "none",
           }}
@@ -126,9 +125,9 @@ const LoadingScreen = () => {
               width: "8px",
               height: "8px",
               borderRadius: "50%",
-              backgroundColor: "#3ddbe1",
+              backgroundColor: "#000000",
               animation: "gc-orbit 3s linear infinite",
-              opacity: 0.7,
+              opacity: 0.6,
             }}
           />
           <div
@@ -137,9 +136,9 @@ const LoadingScreen = () => {
               width: "5px",
               height: "5px",
               borderRadius: "50%",
-              backgroundColor: "#3ddbe1",
+              backgroundColor: "#000000",
               animation: "gc-orbit-reverse 4.5s linear infinite",
-              opacity: 0.4,
+              opacity: 0.3,
             }}
           />
         </div>
@@ -156,10 +155,11 @@ const LoadingScreen = () => {
             animation: 'gc-logo-pop 0.8s cubic-bezier(0.34,1.56,0.64,1) forwards, gc-logo-float 3s ease-in-out 0.8s infinite, gc-glow-pulse 2s ease-in-out 0.8s infinite',
             marginBottom: '32px',
             flexShrink: 0,
+            filter: 'brightness(0)',
           }}
         />
 
-        {/* Brand name — fully white */}
+        {/* Brand name — fully black */}
         <div
           style={{
             transition: "opacity 0.5s ease, transform 0.5s ease",
@@ -170,10 +170,10 @@ const LoadingScreen = () => {
         >
           <span
             style={{
-              color: "#ffffff",
+              color: "#000000",
               fontSize: "2.2rem",
               fontWeight: 700,
-              fontFamily: "'Inter', 'Segoe UI', system-ui, sans-serif",
+              fontFamily: "var(--font-outfit), sans-serif",
               letterSpacing: "-0.5px",
             }}
           >
@@ -192,9 +192,9 @@ const LoadingScreen = () => {
         >
           <span
             style={{
-              color: "rgba(255,255,255,0.45)",
+              color: "rgba(0, 0, 0, 0.45)",
               fontSize: "0.7rem",
-              fontFamily: "'Inter', 'Segoe UI', system-ui, sans-serif",
+              fontFamily: "var(--font-outfit), sans-serif",
               fontWeight: 500,
               letterSpacing: "2px",
               textTransform: "uppercase",
@@ -213,7 +213,7 @@ const LoadingScreen = () => {
                 width: "6px",
                 height: "6px",
                 borderRadius: "50%",
-                backgroundColor: "#3ddbe1",
+                backgroundColor: "#000000",
                 animation: `gc-dot-blink 1.2s ease-in-out ${i * 0.2}s infinite`,
               }}
             />
@@ -228,15 +228,15 @@ const LoadingScreen = () => {
             left: 0,
             right: 0,
             height: "2px",
-            backgroundColor: "rgba(61,219,225,0.15)",
+            backgroundColor: "rgba(0, 0, 0, 0.05)",
           }}
         >
           <div
             style={{
               height: "100%",
               width: `${progress}%`,
-              backgroundColor: "#3ddbe1",
-              boxShadow: "0 0 12px rgba(61,219,225,0.8)",
+              backgroundColor: "#000000",
+              boxShadow: "0 0 12px rgba(0, 0, 0, 0.2)",
               transition: "width 0.08s linear",
             }}
           />

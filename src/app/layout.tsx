@@ -1,19 +1,63 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Outfit, Playfair_Display } from "next/font/google";
 import "bootstrap/dist/css/bootstrap.min.css"; // Bootstrap CSS
 import "bootstrap-icons/font/bootstrap-icons.css"; // Bootstrap Icons
 import "./globals.css";
 import LoadingScreen from "@/components/LoadingScreen";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 
-const inter = Inter({
-  variable: "--font-inter",
+const outfit = Outfit({
+  variable: "--font-outfit",
+  subsets: ["latin"],
+});
+
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "GraseCode | Premium IT Solutions",
-  description: "GraseCode provides professional web development, cloud solutions, and IT consulting.",
+  metadataBase: new URL("https://grasecode.com"),
+  title: {
+    default: "GraseCode | Premium IT Solutions & Software Architectures",
+    template: "%s | GraseCode",
+  },
+  description: "GraseCode delivers cutting-edge web applications, cloud infrastructure, and premium IT consulting to scale your business worldwide.",
+  keywords: [
+    "GraseCode",
+    "software architecture",
+    "web application",
+    "cloud infrastructure",
+    "IT consulting",
+    "premium web development",
+    "Next.js developer",
+  ],
+  robots: "index, follow",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://grasecode.com",
+    siteName: "GraseCode",
+    title: "GraseCode | Premium IT Solutions & Software Architectures",
+    description: "GraseCode delivers cutting-edge web applications, cloud infrastructure, and premium IT consulting to scale your business worldwide.",
+    images: [
+      {
+        url: "/grasecode-linkedin-logo.png",
+        width: 800,
+        height: 800,
+        alt: "GraseCode Logo",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "GraseCode | Premium IT Solutions & Software Architectures",
+    description: "GraseCode delivers cutting-edge web applications, cloud infrastructure, and premium IT consulting.",
+    images: ["/grasecode-linkedin-logo.png"],
+  },
 };
 
 export default function RootLayout({
@@ -22,8 +66,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" style={{ backgroundColor: '#050505' }}>
-      <body className={`${inter.variable} antialiased`}>
+    <html lang="en" style={{ backgroundColor: '#ffffff' }}>
+      <body className={`${outfit.variable} ${playfair.variable} antialiased`}>
         <LoadingScreen />
         {children}
         <WhatsAppFloat />

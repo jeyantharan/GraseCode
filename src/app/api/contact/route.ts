@@ -91,7 +91,7 @@ export async function POST(req: NextRequest) {
               </tr>` : ""}
               <tr>
                 <td style="padding: 10px 0; border-bottom: 1px solid #eee; color: #666; font-size: 13px; font-weight: bold;">Email</td>
-                <td style="padding: 10px 0; border-bottom: 1px solid #eee; color: #222; font-size: 14px;"><a href="mailto:${mailtoHref}" style="color: #3ddbe1;">${safeEmail}</a></td>
+                <td style="padding: 10px 0; border-bottom: 1px solid #eee; color: #222; font-size: 14px;"><a href="mailto:${mailtoHref}" style="color: #000000; font-weight: bold; text-decoration: underline;">${safeEmail}</a></td>
               </tr>
               ${safePhone ? `<tr>
                 <td style="padding: 10px 0; border-bottom: 1px solid #eee; color: #666; font-size: 13px; font-weight: bold;">Phone</td>
@@ -120,7 +120,7 @@ export async function POST(req: NextRequest) {
             <p style="color: #444; font-size: 15px; line-height: 1.65; margin: 0 0 24px;">
               If your request is urgent, feel free to reply to this email.
             </p>
-            <p style="color: #3ddbe1; font-size: 14px; font-weight: bold; margin: 0;">— The GraseCode team</p>
+            <p style="color: #050505; font-size: 14px; font-weight: bold; margin: 0;">— The GraseCode team</p>
           </div>
           <div style="background: #050505; padding: 18px 32px; text-align: center;">
             <p style="color: rgba(255,255,255,0.45); font-size: 12px; margin: 0;">This is an automated confirmation. Please do not share sensitive information by email unless requested.</p>
