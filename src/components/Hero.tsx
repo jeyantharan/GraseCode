@@ -11,7 +11,7 @@ const Hero = () => {
       <Container className="position-relative" style={{ zIndex: 1 }}>
         <Row className="align-items-center mt-lg-0 mt-4">
           <Col lg={10} className="text-center mx-auto">
-            <span className="hero-tag">[ THE FUTURE OF DIGITAL ARCHITECTURE ]</span>
+            <span className="hero-tag">[THE FUTURE OF DIGITAL ARCHITECTURE]</span>
             <h1 className="display-1 fw-bold text-dark mb-4" style={{ letterSpacing: "-0.04em", lineHeight: 1.05 }}>
               We Build <span className="font-serif italic fw-normal text-muted-custom">Premium</span>{" "}Software &amp; IT Architectures
             </h1>
@@ -22,7 +22,7 @@ const Hero = () => {
               <Link href="#services" className="btn-premium-solid btn-lg text-decoration-none">Our Services</Link>
               <Link href="/contact" className="btn-premium-outline btn-lg text-decoration-none">Contact Us</Link>
             </div>
-            
+
             {/* Embedded client logos below CTAs */}
             <div className="mt-lg-5 mt-4 pt-lg-5 pt-2">
               <div className="text-dark mb-3 font-serif italic" style={{ fontSize: "1.5rem", fontWeight: 500 }}>
@@ -59,14 +59,14 @@ const Hero = () => {
                   className="client-logo-hero client-logo-jpg"
                   unoptimized
                 />
-                
+
                 {/* Typographic logo for Ironwood */}
-                <div 
-                  className="client-logo-hero client-logo-ironwood text-dark fw-bold" 
-                  style={{ 
-                    fontSize: "1.7rem", 
-                    letterSpacing: "0.15em", 
-                    fontFamily: "var(--font-outfit), sans-serif", 
+                <div
+                  className="client-logo-hero client-logo-ironwood text-dark fw-bold"
+                  style={{
+                    fontSize: "1.7rem",
+                    letterSpacing: "0.15em",
+                    fontFamily: "var(--font-outfit), sans-serif",
                     transition: "all 0.3s ease",
                     cursor: "pointer",
                     userSelect: "none"
@@ -74,13 +74,13 @@ const Hero = () => {
                 >
                   IRONWOOD
                 </div>
-                
+
                 {/* Typographic logo for Baitt */}
-                <div 
-                  className="client-logo-hero client-logo-baitt text-dark font-serif fw-bold" 
-                  style={{ 
-                    fontSize: "2.1rem", 
-                    letterSpacing: "0.02em", 
+                <div
+                  className="client-logo-hero client-logo-baitt text-dark font-serif fw-bold"
+                  style={{
+                    fontSize: "2.1rem",
+                    letterSpacing: "0.02em",
                     transition: "all 0.3s ease",
                     cursor: "pointer",
                     userSelect: "none"
@@ -93,7 +93,7 @@ const Hero = () => {
           </Col>
         </Row>
       </Container>
-      
+
       <style>{`
         .client-logo-hero {
           opacity: 0.95;
