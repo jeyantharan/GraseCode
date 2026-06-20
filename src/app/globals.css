@@ -15,11 +15,16 @@
 }
 
 /* Global resets & typography */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+  position: relative;
+}
+
 body {
   background-color: var(--gc-bg);
   color: var(--gc-text);
   font-family: var(--font-outfit), sans-serif;
-  overflow-x: hidden;
   letter-spacing: -0.01em;
 }
 
