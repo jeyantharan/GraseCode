@@ -54,6 +54,9 @@ const Navbar = () => {
             <Nav.Link as={Link} href="/#about" onClick={() => setExpanded(false)}>
               About Us
             </Nav.Link>
+            <Nav.Link as={Link} href="/blog" onClick={() => setExpanded(false)}>
+              Blog
+            </Nav.Link>
             <Nav.Link as={Link} href="/contact" onClick={() => setExpanded(false)}>
               Contact
             </Nav.Link>

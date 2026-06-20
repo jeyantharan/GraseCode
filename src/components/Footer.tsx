@@ -23,9 +23,47 @@ const Footer = () => {
               </div>
               <div className="text-white fw-bold fs-3 d-inline-flex align-items-center" style={{ letterSpacing: "-1px", height: '60px' }}>GraseCode</div>
             </div>
-            <p className="text-light lh-lg" style={{ opacity: 0.6 }}>
+            <p className="text-light lh-lg mb-4" style={{ opacity: 0.6 }}>
               Building the future of technology, one elegant solution at a time. Partner with us to accelerate your digital transformation.
             </p>
+            <div className="d-flex gap-3">
+              <a 
+                href="https://www.linkedin.com/company/grasecode" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-white social-link-footer"
+                style={{ fontSize: "1.3rem", opacity: 0.6 }}
+                aria-label="LinkedIn"
+              >
+                <i className="bi bi-linkedin"></i>
+              </a>
+              <a 
+                href="https://www.facebook.com/share/1YjattMvJP/?mibextid=wwXIfr" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-white social-link-footer"
+                style={{ fontSize: "1.3rem", opacity: 0.6 }}
+                aria-label="Facebook"
+              >
+                <i className="bi bi-facebook"></i>
+              </a>
+              <a 
+                href="https://clutch.co/profile/grasecode" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-white social-link-footer"
+                style={{ fontSize: "1.3rem", opacity: 0.6 }}
+                aria-label="Clutch"
+              >
+                <svg 
+                  viewBox="0 0 24 24" 
+                  fill="currentColor" 
+                  style={{ width: "1.1rem", height: "1.1rem", verticalAlign: "middle" }}
+                >
+                  <path d="M19.4 15a7.5 7.5 0 1 1 0-6h3.1a10.6 10.6 0 1 0 0 6z" />
+                </svg>
+              </a>
+            </div>
           </Col>
           <Col lg={4} className="px-lg-5">
             <h5 className="text-white fw-bold mb-4">Quick Links</h5>
@@ -33,6 +71,7 @@ const Footer = () => {
               <li className="mb-3"><Link href="/" className="text-light text-decoration-none" style={{ opacity: 0.7 }}>Home</Link></li>
               <li className="mb-3"><Link href="/#services" className="text-light text-decoration-none" style={{ opacity: 0.7 }}>Services</Link></li>
               <li className="mb-3"><Link href="/#about" className="text-light text-decoration-none" style={{ opacity: 0.7 }}>About Us</Link></li>
+              <li className="mb-3"><Link href="/blog" className="text-light text-decoration-none" style={{ opacity: 0.7 }}>Blog</Link></li>
               <li className="mb-3"><Link href="/contact" className="text-light text-decoration-none" style={{ opacity: 0.7 }}>Contact</Link></li>
             </ul>
           </Col>
