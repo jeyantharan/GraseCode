@@ -2,6 +2,7 @@ import React from "react";
 import dynamic from "next/dynamic";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import Clients from "@/components/Clients";
 import Services from "@/components/Services";
 import Footer from "@/components/Footer";
 
@@ -22,6 +23,7 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
+        <Clients />
         <Services />
         <Projects />
         <section id="about" className="section-padding grid-bg" style={{ borderTop: "1px solid var(--gc-border)" }}>

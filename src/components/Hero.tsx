@@ -22,87 +22,9 @@ const Hero = () => {
               <Link href="#services" className="btn-premium-solid btn-lg text-decoration-none">Our Services</Link>
               <Link href="/contact" className="btn-premium-outline btn-lg text-decoration-none">Contact Us</Link>
             </div>
-
-            {/* Embedded client logos below CTAs */}
-            <div className="mt-lg-5 mt-4 pt-lg-5 pt-2">
-              <div className="text-dark mb-3 font-serif italic" style={{ fontSize: "1.5rem", fontWeight: 500 }}>
-                Connecting Ideas, Businesses, and Markets Worldwide.
-              </div>
-              <div className="client-logo-hero-wrapper d-flex gap-5 justify-content-center align-items-center flex-wrap">
-                <Image
-                  src="/qv-final-logo.svg"
-                  alt="QV Trattoria premium restaurant reservation platform client logo"
-                  width={280}
-                  height={100}
-                  style={{
-                    height: "90px",
-                    width: "auto",
-                    objectFit: "contain",
-                    transition: "all 0.3s ease",
-                    cursor: "pointer",
-                  }}
-                  className="client-logo-hero client-logo-qv"
-                  unoptimized
-                />
-                <Image
-                  src="/logo.jpg"
-                  alt="DeDev luxury fashion e-commerce storefront client logo"
-                  width={320}
-                  height={120}
-                  style={{
-                    height: "140px",
-                    width: "auto",
-                    objectFit: "contain",
-                    transition: "all 0.3s ease",
-                    cursor: "pointer",
-                  }}
-                  className="client-logo-hero client-logo-jpg"
-                  unoptimized
-                />
-
-                {/* Typographic logo for Ironwood */}
-                <div
-                  className="client-logo-hero client-logo-ironwood text-dark fw-bold"
-                  style={{
-                    fontSize: "1.7rem",
-                    letterSpacing: "0.15em",
-                    fontFamily: "var(--font-outfit), sans-serif",
-                    transition: "all 0.3s ease",
-                    cursor: "pointer",
-                    userSelect: "none"
-                  }}
-                >
-                  IRONWOOD
-                </div>
-
-                {/* Typographic logo for Baitt */}
-                <div
-                  className="client-logo-hero client-logo-baitt text-dark font-serif fw-bold"
-                  style={{
-                    fontSize: "2.1rem",
-                    letterSpacing: "0.02em",
-                    transition: "all 0.3s ease",
-                    cursor: "pointer",
-                    userSelect: "none"
-                  }}
-                >
-                  Baitt
-                </div>
-              </div>
-            </div>
           </Col>
         </Row>
       </Container>
-
-      <style>{`
-        .client-logo-hero {
-          opacity: 0.95;
-        }
-        .client-logo-hero:hover {
-          transform: scale(1.05);
-          opacity: 1 !important;
-        }
-      `}</style>
     </section>
   );
 };
