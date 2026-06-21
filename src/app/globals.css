@@ -154,9 +154,9 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (min-width: 992px) {
   .hero-section {
-    height: 100vh;
-    padding-top: 80px; /* Height of fixed navbar */
-    padding-bottom: 30px;
+    min-height: 100vh;
+    padding-top: 100px; /* Height of fixed navbar + safety */
+    padding-bottom: 50px;
   }
 }
 
@@ -328,7 +328,7 @@ h1, h2, h3, h4, h5, h6 {
 .flip-card {
   background-color: transparent;
   perspective: 1200px;
-  height: 440px; /* Comfortably fits the project text and buttons */
+  height: 480px; /* Comfortably fits the project text and buttons with safe text wrap */
   width: 100%;
 }
 

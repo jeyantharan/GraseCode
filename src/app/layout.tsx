@@ -3,7 +3,6 @@ import { Outfit, Playfair_Display } from "next/font/google";
 import "bootstrap/dist/css/bootstrap.min.css"; // Bootstrap CSS
 import "bootstrap-icons/font/bootstrap-icons.css"; // Bootstrap Icons
 import "./globals.css";
-import LoadingScreen from "@/components/LoadingScreen";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 
 const outfit = Outfit({
@@ -68,7 +67,6 @@ export default function RootLayout({
   return (
     <html lang="en" style={{ backgroundColor: '#ffffff' }}>
       <body className={`${outfit.variable} ${playfair.variable} antialiased`}>
-        <LoadingScreen />
         {children}
         <WhatsAppFloat />
       </body>
