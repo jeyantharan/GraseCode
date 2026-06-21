@@ -16,7 +16,7 @@ const Clients = () => {
           <Col xs={6} md={3} className="text-center">
             <div className="client-logo-wrapper d-inline-block">
               <Image
-                src="/QV Final Logo.svg"
+                src="/qv-final-logo.svg"
                 alt="QV Logo"
                 width={180}
                 height={60}

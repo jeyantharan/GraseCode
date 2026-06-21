@@ -30,7 +30,7 @@ const Hero = () => {
               </div>
               <div className="client-logo-hero-wrapper d-flex gap-5 justify-content-center align-items-center flex-wrap">
                 <Image
-                  src="/QV Final Logo.svg"
+                  src="/qv-final-logo.svg"
                   alt="QV Trattoria premium restaurant reservation platform client logo"
                   width={280}
                   height={100}
