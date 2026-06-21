@@ -40,7 +40,7 @@ const Clients = () => {
                 width={320}
                 height={120}
                 style={{
-                  height: "140px",
+                  height: "90px",
                   width: "auto",
                   objectFit: "contain",
                   transition: "all 0.3s cubic-bezier(0.16, 1, 0.3, 1)",
